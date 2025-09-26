@@ -12,11 +12,40 @@ public class ParcialUnoApplication {
 
 }
 
-/* Listar todos los libros	GET	http://localhost:9000/api/books
- * Crear un libro	POST	http://localhost:9000/api/books
- * Buscar por ID	GET	http://localhost:9000/api/books/{id}
- * Buscar por ISBN	GET	http://localhost:9000/api/books/isbn/{isbn}
- * Actualizar libro	PUT	http://localhost:9000/api/books/{id}
- * Eliminar libro	DELETE	http://localhost:9000/api/books/{id}
- * Buscar por parámetros (isbn y name)	POST	http://localhost:9000/api/books/params?isbn=xxx&name=yyy
- */
+/* 
+
+1. GET todos los libros
+Método: GET -URL: http://localhost:9000/api/books - Lista de libros en JSON 
+
+2. POST crear libro
+Método: POST - URL: http://localhost:9000/api/books
+Body → raw → JSON:
+{
+  "bookId": "test001",
+  "isbn": "9876543210",
+  "name": "Spring Boot para principiantes",
+  "available": true,
+  "amount": 10
+}
+
+3. GET por ID
+Método: GET -URL: http://localhost:9000/api/books/test001
+
+4. PUT actualizar libro
+Método: PUT - URL: http://localhost:9000/api/books/test001
+Body → raw → JSON:
+{
+  "bookId": "test001",
+  "isbn": "9876543210",
+  "name": "Spring Boot avanzado",
+  "available": false,
+  "amount": 7
+}
+
+5. DELETE libro
+Método: DELETE - URL: http://localhost:9000/api/books/test001
+
+6. BUSCAR POR ISBN
+Método: GET - URL: http://localhost:9000/api/books/isbn/9876543210
+
+*/
